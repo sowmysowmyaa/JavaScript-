@@ -1,0 +1,68 @@
+<html>
+<head> 
+<title>shuffle a string </title>
+</head>
+<style type="text/css">
+    .f1{
+        position:absolute ;
+        top:70px ;
+        left: 100px;
+        background-color: lightgoldenrodyellow;
+        font-family: cursive;
+    }
+    .f2{
+        
+        font-family: cursive;
+
+    }
+</style>
+
+<script>
+    var string=document.getElementById("s1").value;
+function shufflestring(string) {
+            
+    var string=document.getElementById("s1").value;
+            var shuffled="",len,i;
+            string=string.toString();
+            len=string.length;
+            for(i=0;i<len;i++)
+            {
+                randpos=Math.floor(Math.random()*string.length);
+                shuffled += string[randpos];
+                string=string.slice(0,randpos)+string.slice(randpos+1);
+
+
+            }
+
+        
+    document.getElementById("randomfield").innerHTML = shuffled;
+}
+</script>
+   
+          
+
+
+<body>
+<center>
+<div class="f2">
+<h3> Click the button to shuffle a string </h3>
+</div>
+<form name="randform">
+ <div class="f1">
+ Enter a string:<input type="text" id="s1"/>
+<input type="button" value="shuffle" onClick="shufflestring(string);">
+<br><br>
+
+<h4 id="randomfield" style="color: green"> </h4></div>
+</form>
+</center>
+</body>
+</html>
+
+ 
+
+
+
+
+
+
